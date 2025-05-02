@@ -23,8 +23,8 @@
 | Component                  | Function                                |
 |----------------------------|-----------------------------------------|
 | ESP32 Dev Kit C V4         | Main controller with WiFi and OTA       |
-| WS2812 LED ring (12 LEDs)  | Plant light (GPIO4)                     |
-| Analog LDR sensor          | Brightness detection (GPIO36 / ADC1_CH0)|
+| WS2812 LED ring (12 LEDs)  | Plant light                             |
+| Analog LDR sensor          | Brightness detection                    |
 | Power bank or USB adapter  | Power supply                            |
 
 ---
