@@ -1,0 +1,45 @@
+light:
+  - platform: neopixelbus
+    type: GRB
+    variant: WS2812
+    pin: GPIO4
+    num_leds: 12
+    name: "Pflanzenlicht Ring"
+    id: ringlicht
+    restore_mode: ALWAYS_OFF
+
+script:
+  - id: sonnenverlauf
+    mode: restart
+    then:
+      - light.turn_on:
+          id: ringlicht
+          brightness: 60%
+          red: 1.0
+          green: 0.39
+          blue: 0.0
+      - delay: 3s
+      - light.turn_on:
+          id: ringlicht
+          brightness: 70%
+          red: 1.0
+          green: 1.0
+          blue: 0.78
+      - delay: 4s
+      - light.turn_on:
+          id: ringlicht
+          brightness: 50%
+          red: 1.0
+          green: 0.2
+          blue: 0.1
+      - delay: 4s
+      - light.turn_off: ringlicht
+
+interval:
+  - interval: 10s
+    then:
+      - if:
+          condition:
+            lambda: 'return id(lichtsensor).state > 2.0;'
+          then:
+            - script.execute: sonnenverlauf

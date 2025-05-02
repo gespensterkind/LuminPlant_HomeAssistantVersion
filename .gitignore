@@ -1,0 +1,5 @@
+secrets.yaml
+.pio/
+.vscode/
+*.bin
+__pycache__/

@@ -1,0 +1,7 @@
+sensor:
+  - platform: adc
+    pin: GPIO36
+    name: "Pflanzenlicht Lichtsensor"
+    id: lichtsensor
+    update_interval: 2s
+    attenuation: 12db
