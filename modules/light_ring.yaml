@@ -84,7 +84,7 @@ interval:
     then:
       - if:
           condition:
-            lambda: 'return id(lichtsensor).state > 2.0;'
+            lambda: 'return id(lightsensor).state > 2.0;'
           then:
           #edit this to your needs
             - script.execute: day_long
