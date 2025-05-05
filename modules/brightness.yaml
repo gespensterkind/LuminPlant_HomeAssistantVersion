@@ -11,4 +11,4 @@ number:
       then:
         - light.control:
             id: plantlight
-            brightness: !lambda 'return x / 100.0;'
+          brightness: !lambda 'return id(lightintensity).state / 100.0;'
