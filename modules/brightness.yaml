@@ -1,0 +1,14 @@
+number:
+  - platform: template
+    name: "Lichtintensität"
+    id: lightintensity
+    min_value: 1
+    max_value: 100
+    step: 1
+    initial_value: 80
+    optimistic: true
+    on_value:
+      then:
+        - light.control:
+            id: plantlight
+            brightness: !lambda 'return x / 100.0;'
