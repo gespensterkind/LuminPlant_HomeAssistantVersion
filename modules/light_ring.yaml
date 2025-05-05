@@ -4,42 +4,42 @@ light:
     variant: WS2812
     pin: GPIO4
     num_leds: 12
-    name: "Pflanzenlicht Ring"
-    id: ringlicht
+    name: "Luminplant Ring"
+    id: plantlight
     restore_mode: ALWAYS_OFF
 
 script:
-  - id: sonnenverlauf
+  - id: daylight test
     mode: restart
     then:
       - light.turn_on:
-          id: ringlicht
+          id: plantlight
           brightness: 60%
           red: 1.0
           green: 0.39
           blue: 0.0
       - delay: 3s
       - light.turn_on:
-          id: ringlicht
+          id: plantlight
           brightness: 70%
           red: 1.0
           green: 1.0
           blue: 0.78
       - delay: 4s
       - light.turn_on:
-          id: ringlicht
+          id: plantlight
           brightness: 50%
           red: 1.0
           green: 0.2
           blue: 0.1
       - delay: 4s
-      - light.turn_off: ringlicht
+      - light.turn_off: plantlight
 
 interval:
   - interval: 10s
     then:
       - if:
           condition:
-            lambda: 'return id(lichtsensor).state > 2.0;'
+            lambda: 'return id(lightsensor).state > 2.0;'
           then:
-            - script.execute: sonnenverlauf
+            - script.execute: daylight test
