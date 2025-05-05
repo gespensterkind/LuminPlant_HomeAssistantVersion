@@ -11,3 +11,7 @@ packages:
 #  soil: !include modules/soil_moisture.yaml
 #  water: !include modules/water_level.yaml
 #  climate: !include modules/climate.yaml
+
+#  # Only for homeassistant
+#  # Only for esphome
+buttons: !include buttons.yaml

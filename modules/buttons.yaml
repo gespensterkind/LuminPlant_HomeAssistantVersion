@@ -1,0 +1,17 @@
+#  # Only for homeassistant
+#  # Only for esphome
+
+button:
+  - platform: template
+    name: "Kurzverlauf starten"
+    id: button_day_short
+    on_press:
+      then:
+        - script.execute: day_short
+
+  - platform: template
+    name: "Langverlauf starten"
+    id: button_day_long
+    on_press:
+      then:
+        - script.execute: day_long
