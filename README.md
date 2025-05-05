@@ -52,9 +52,9 @@
 
 ## 📦 Example Setup
 
-![Wiring](docs/images/luminplant-wiring.jpg) *(optional)*
+![Wiring](docs/images/luminplant-wiring.png) *(optional)*
 
-> `main.yaml` – located in `esphome/` – contains the current working config.
+> `luminplant.yaml` + `baseconfig.yaml`– located in `esphome/` – contains the current working config.
 
 ---
 
