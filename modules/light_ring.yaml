@@ -15,7 +15,7 @@ script:
     then:
       - light.turn_on:
           id: plantlight
-          brightness: !lambda 'return id(lightintensity) / 100.0;'
+          brightness: !lambda 'return id(lightintensity).state / 100.0;'
           red: 1.0
           green: 0.55
           blue: 0.2
@@ -24,7 +24,7 @@ script:
 
       - light.turn_on:
           id: plantlight
-          brightness: !lambda 'return id(lightintensity) / 100.0;'
+          brightness: !lambda 'return id(lightintensity).state / 100.0;'
           red: 1.0
           green: 1.0
           blue: 0.85
@@ -33,7 +33,7 @@ script:
 
       - light.turn_on:
           id: plantlight
-          brightness: !lambda 'return id(lightintensity) / 100.0;'
+          brightness: !lambda 'return id(lightintensity).state / 100.0;'
           red: 1.0
           green: 0.45
           blue: 0.15
@@ -50,7 +50,7 @@ script:
     then:
       - light.turn_on:
           id: plantlight
-          brightness: !lambda 'return id(lightintensity) / 100.0;'
+          brightness: !lambda 'return id(lightintensity).state / 100.0;'
           red: 1.0
           green: 0.55
           blue: 0.2
@@ -59,7 +59,7 @@ script:
 
       - light.turn_on:
           id: plantlight
-          brightness: !lambda 'return id(lightintensity) / 100.0;'
+          brightness: !lambda 'return id(lightintensity).state / 100.0;'
           red: 1.0
           green: 1.0
           blue: 0.85
@@ -68,7 +68,7 @@ script:
 
       - light.turn_on:
           id: plantlight
-          brightness: !lambda 'return id(lightintensity) / 100.0;'
+          brightness: !lambda 'return id(lightintensity).state / 100.0;'
           red: 1.0
           green: 0.45
           blue: 0.15
