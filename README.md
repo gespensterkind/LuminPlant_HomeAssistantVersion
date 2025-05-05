@@ -70,6 +70,9 @@ This project is part of a practical preparation for an upcoming internship in em
 
 ---
 
+>## ⚠️ **IMPORTANT!**
+>The wifi.ap fallback option is intended for local setup. Please use your own credentials and adequately protect the device (e.g., with a strong password, disabled AP, etc.).
+
 ## 📬 Contact
 
 Project by **Jule E**  
