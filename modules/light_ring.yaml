@@ -4,36 +4,80 @@ light:
     variant: WS2812
     pin: GPIO4
     num_leds: 12
-    name: "Luminplant Ring"
+    name: "Luminplant light"
     id: plantlight
     restore_mode: ALWAYS_OFF
 
 script:
-  - id: daylight test
+  # quick test (ca. minutes)
+  - id: day_short
     mode: restart
     then:
       - light.turn_on:
           id: plantlight
-          brightness: 60%
+          brightness: !lambda 'return id(lightintensity) / 100.0;'
           red: 1.0
-          green: 0.39
-          blue: 0.0
-      - delay: 3s
+          green: 0.55
+          blue: 0.2
+          transition_length: 0s
+      - delay: 30s
+
       - light.turn_on:
           id: plantlight
-          brightness: 70%
+          brightness: !lambda 'return id(lightintensity) / 100.0;'
           red: 1.0
           green: 1.0
-          blue: 0.78
-      - delay: 4s
+          blue: 0.85
+          transition_length: 30s
+      - delay: 90s
+
       - light.turn_on:
           id: plantlight
-          brightness: 50%
+          brightness: !lambda 'return id(lightintensity) / 100.0;'
           red: 1.0
-          green: 0.2
-          blue: 0.1
-      - delay: 4s
-      - light.turn_off: plantlight
+          green: 0.45
+          blue: 0.15
+          transition_length: 30s
+      - delay: 60s
+
+      - light.turn_off:
+          id: plantlight
+          transition_length: 15s
+
+  # realistic sunny day (ca. 11 hours)
+  - id: day_long
+    mode: restart
+    then:
+      - light.turn_on:
+          id: plantlight
+          brightness: !lambda 'return id(lightintensity) / 100.0;'
+          red: 1.0
+          green: 0.55
+          blue: 0.2
+          transition_length: 0s
+      - delay: 30min
+
+      - light.turn_on:
+          id: plantlight
+          brightness: !lambda 'return id(lightintensity) / 100.0;'
+          red: 1.0
+          green: 1.0
+          blue: 0.85
+          transition_length: 120s
+      - delay: 10h
+
+      - light.turn_on:
+          id: plantlight
+          brightness: !lambda 'return id(lightintensity) / 100.0;'
+          red: 1.0
+          green: 0.45
+          blue: 0.15
+          transition_length: 90s
+      - delay: 30min
+
+      - light.turn_off:
+          id: plantlight
+          transition_length: 60s
 
 interval:
   - interval: 10s
@@ -42,4 +86,5 @@ interval:
           condition:
             lambda: 'return id(lightsensor).state > 2.0;'
           then:
-            - script.execute: daylight test
+          #edit this to your needs
+            - script.execute: day_long

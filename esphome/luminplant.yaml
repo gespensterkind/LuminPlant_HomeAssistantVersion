@@ -2,12 +2,12 @@ esphome:
   name: luminplant
   friendly_name: LuminPlant
 
-#  Konfiguration (WLAN, OTA, Logger, API, ESP32-Board)
-<<: !include common/base_config.yaml
-
-# Modulweise Einbindung
-<<: !include modules/light_ring.yaml
-<<: !include modules/light_sensor.yaml
-#<<: !include modules/soil_moisture.yaml
-#<<: !include modules/water_level.yaml
-#<<: !include modules/climate.yaml
+packages:
+  base: !include common/base_config.yaml
+  light_ring: !include modules/light_ring.yaml
+  light_sensor: !include modules/light_sensor.yaml
+  ringlight: !include ringlight.yaml
+  brightness: !include brightness.yaml
+#  soil: !include modules/soil_moisture.yaml
+#  water: !include modules/water_level.yaml
+#  climate: !include modules/climate.yaml
