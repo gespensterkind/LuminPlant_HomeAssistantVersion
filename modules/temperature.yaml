@@ -1,0 +1,8 @@
+one_wire:
+  - platform: gpio
+    pin: 21
+
+sensor:
+  - platform: dallas_temp
+    name: "Temperature"
+    update_interval: 15s
