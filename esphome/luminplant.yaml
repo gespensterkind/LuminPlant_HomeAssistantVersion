@@ -9,7 +9,7 @@ packages:
   ringlight: !include ringlight.yaml
   brightness: !include brightness.yaml
   temperature: !include modules/temperature.yaml
-#  soil: !include modules/soil_moisture.yaml
+  soil: !include modules/soil_moisture.yaml
 #  water: !include modules/water_level.yaml
 #  climate: !include modules/climate.yaml
 
