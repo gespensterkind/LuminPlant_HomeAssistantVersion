@@ -1,0 +1,12 @@
+sensor:
+  - platform: adc
+    pin: GPIO32
+    name: "Bodenfeuchtigkeit"
+    unit_of_measurement: "%"
+    attenuation: 11db
+    update_interval: 10s
+    filters:
+      - calibrate_linear:
+          - 3.1 -> 0
+          - 0.15 -> 100
+      - lambda: "return fmaxf(0.0f, fminf(100.0f, x));"
