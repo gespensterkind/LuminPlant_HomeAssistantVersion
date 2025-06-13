@@ -8,10 +8,11 @@ packages:
   light_sensor: !include modules/light_sensor.yaml
   ringlight: !include ringlight.yaml
   brightness: !include brightness.yaml
-  temperature: !include modules/temperature.yaml
+# temperature: !include modules/temperature.yaml #Included in climate
+# humidity: !include modules/humidity.yaml #Included in climate
   soil: !include modules/soil_moisture.yaml
+  climate: !include modules/climate.yaml
 #  water: !include modules/water_level.yaml
-#  climate: !include modules/climate.yaml
 
 #  # Only for homeassistant
 #  # Only for esphome
