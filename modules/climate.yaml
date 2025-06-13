@@ -1,0 +1,15 @@
+i2c:
+  sda: GPIO21
+  scl: GPIO22
+  scan: true
+
+sensor:
+  - platform: aht10
+    variant: AHT20 
+    temperature:
+      name: "Raumtemperatur"
+      id: my_temp
+    humidity:
+      name: "Luftfeuchtigkeit"
+      id: my_hum
+    update_interval: 60s
